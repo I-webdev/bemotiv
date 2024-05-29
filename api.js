@@ -1,7 +1,9 @@
 import express from "express";
+import bodyParser from "body-parser";
 const app = express();
 const port = 3100;
 
+app.use(bodyParser.urlencoded({extended:true}));
 
 
 app.get("/motivation", (req, res)=>{
@@ -15,7 +17,12 @@ app.get("/motivation", (req, res)=>{
     res.json(aMotivation);
 });
 
-
+app.get("/motivate", (req, res)=>{
+    if (motivations) {
+        res.json(motivations);
+    }
+    
+});
 
 
 
@@ -34,7 +41,7 @@ const motivations = [
     Motivation:"The only way to do great work is to love what you do."},
 
     {_id: 3,
-    Day: "Wed",
+    Day: "Wednes",
     Motivation:"Success is the sum of small efforts, repeated day in and day out."},
     
     {_id: 4,
@@ -46,7 +53,7 @@ const motivations = [
         Motivation:"Congratulations on making it to the end of the week! But before diving headfirst into the weekend, one more day to stay motivated and focused."},
   
 {_id: 6,
-    Day: "Sat",
+    Day: "Satur",
     Motivation:"Don’t let the weekend be your weak end. Stay strong, stay motivated."},
 
     {_id: 7,
@@ -63,7 +70,7 @@ const motivations = [
  
 
         {_id: 10,
-    Day: "Wed",
+    Day: "Wednes",
     Motivation:"The way to get started is to quit talking and begin doing."},
 
     {_id: 11,
@@ -75,7 +82,7 @@ const motivations = [
         Motivation:"Oh! It’s Friday again. Share the love that was missing during the week. In a worthy moment of peace and bliss."},
     
     {_id: 13,
-        Day: "Sat",
+        Day: "Satur",
         Motivation:"Saturday shines when you do. Keep shining."},
  
 
@@ -92,7 +99,7 @@ const motivations = [
         Motivation:"The only person you should try to be better than is the person you were yesterday."},
     
     {_id: 17,
-        Day: "Wed",
+        Day: "Wednes",
         Motivation:"The only thing that can grow is the thing you give energy to."},
  
 
@@ -105,7 +112,7 @@ const motivations = [
     Motivation:"The best preparation for tomorrow is doing your best today."},
     
     {_id: 20,
-        Day: "Sat",
+        Day: "Satur",
         Motivation:"Saturday is a day to remember that you are stronger than you think."},
     
     {_id: 21,
@@ -122,7 +129,7 @@ const motivations = [
     Motivation:"Each Tuesday is a blank canvas. Paint it with purpose, passion, and unwavering determination."},
     
     {_id: 24,
-        Day: "Wed",
+        Day: "Wednes",
         Motivation:"Life is about making an impact, changing things, and leaving things better than you found them."},
     
     {_id: 25,
@@ -134,7 +141,7 @@ const motivations = [
         Motivation:"No matter what happened yesterday, it is insignificant when compared to what lies within the core of your being today."},
     
     {_id: 27,
-        Day: "Sat",
+        Day: "Satur",
         Motivation:"Saturday is a day to remember that you are one step closer to your dreams."},
  
 
@@ -151,7 +158,7 @@ const motivations = [
         Motivation:"Focus on progress, not perfection. Let Tuesday be a day of growth and improvement."},
     
     {_id: 31,
-        Day: "Wed",
+        Day: "Wednes",
         Motivation:"Keep the big picture in mind. Ask yourself how you can change the world for the better this Wednesday."},
  
         {_id: 32,
@@ -164,7 +171,7 @@ const motivations = [
  
 
         {_id: 34,
-    Day: "Sat",
+    Day: "Satur",
     Motivation:"Saturday is a day to remember that every accomplishment starts with the decision to try."},
 
     {_id: 35,

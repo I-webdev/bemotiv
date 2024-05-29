@@ -12,11 +12,23 @@ try{
     const response = await axios.get("http://localhost:3100/motivation");
     res.render("index.ejs", {result: response.data});
 }catch(error){
-    res.status(500).send("wahala");
+    res.status(500).send("This page can not be rendered.");
 }
 });
 
-
+app.get("/:_id", async(req, res)=>{
+       
+    try{
+        const response = await axios.get("http://localhost:3100/motivate");
+        const id = parseInt(req.params._id);
+    console.log(id);
+    const foundJoke = response.data.find((motivation)=>motivation._id === id);
+    
+        res.render("index.ejs", {result: foundJoke});
+    }catch(error){
+        res.status(500).send("This page can not be rendered.");
+    }
+    });
 
 
 
