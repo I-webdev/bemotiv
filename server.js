@@ -2,14 +2,14 @@ import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("Public"));
 
-app.get("/", async(req, res)=>{
+app.get("/Bemotiv", async(req, res)=>{
 try{
-    const response = await axios.get("http://localhost:3100/motivation");
+    const response = await axios.get("https://quote-api-rust.vercel.app");
     res.render("index.ejs", {result: response.data});
 }catch(error){
     res.status(500).send("This page can not be rendered.");
@@ -19,7 +19,9 @@ try{
 app.get("/:_id", async(req, res)=>{
        
     try{
-        const response = await axios.get("http://localhost:3100/motivate");
+        const response = await axios.get(
+          "https://quote-api-rust.vercel.app/motivate"
+        );
         const id = parseInt(req.params._id);
     console.log(id);
     const foundJoke = response.data.find((motivation)=>motivation._id === id);
