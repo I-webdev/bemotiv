@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("Public"));
 
-app.get("/Bemotiv", async(req, res)=>{
+app.get("/", async(req, res)=>{
 try{
     const response = await axios.get("https://quote-api-snowy.vercel.app/random");
     res.render("index.ejs", {result: response.data});
