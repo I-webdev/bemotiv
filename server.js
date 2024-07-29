@@ -11,7 +11,8 @@ app.use(express.static("Public"));
 app.get("/", async(req, res)=>{
 try{
     const response = await axios.get("https://quote-api-snowy.vercel.app/random");
-    res.render("index.ejs", {result: response.data});
+    const result = response.data
+    res.render("index.ejs", { data: result});
 }catch(error){
     res.status(500).send("This page can not be rendered.");
 }
