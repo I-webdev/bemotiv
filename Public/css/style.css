@@ -9,16 +9,23 @@ body{
     color: #05014a;
 }
 
-.first-container1{
+.flex-container1{
     
-    
-    
+    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    
 }
 .inner-flex-container{
     width: 50vw;
-    margin: 5em auto;
-    padding: 3em;
+    padding-inline: 5rem;
+}
+.quote{
+    margin-bottom: 2rem;
+}
+.greetings{
+    margin-block-end: 5rem;
 }

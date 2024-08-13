@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Bemotiv</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <div class="flex-container1">
         <div class="inner-flex-container">
-            <h1><%= result.Motivation  %></h1>
-            <h1>Do have a nice <%= result.Day +"day" %>!</h1>
+           
+            
+            <h1 class="quote"><%= result.Motivation %>.</h1>
+            <h1 class="greetings">Do have a nice <%= result.Day %>day!</h1>
         </div>
           
     
-        
+      <div class="footer">
+        All Rights Reserved &#169; <%= new Date().getFullYear() %>
+      </div>  
     </div>
     
     
